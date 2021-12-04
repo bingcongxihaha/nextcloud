@@ -59,7 +59,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.upload:
         if args.download:
-            parser.error("不支持同时上传、下载，详见--help")
+            parser.error("Simultaneous upload and download are not supported. See -- help for details")
         else:
             local_filepath = str(args.upload)
             upload_file = "%s" % local_filepath
@@ -67,11 +67,11 @@ if __name__ == '__main__':
             upload()
     elif args.download:
         if args.upload:
-            parser.error("don`t support，详见--help")
+            parser.error("don`t support，See -- help for details")
         else:
             local_filepath = str(args.download)
             download_file = "%s" % local_filepath
             download_filepath = 'miner_directory/%s' % download_file
             download()
     else:
-        parser.error("no options，see --help")
+        parser.error("no options，See -- help for details")
